@@ -31,3 +31,10 @@ tools/celtenc
 celt.pc
 libcelt.spec
 libcelt/dump_modes
+
+.vs/
+[Dd]ebug/
+[Rr]elease/
+*.exe
+*.dll
+x64
