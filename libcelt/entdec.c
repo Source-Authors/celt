@@ -156,7 +156,7 @@ unsigned ec_decode_bin(ec_dec *_this,unsigned _bits){
    unsigned s;
    _this->ext=_this->rng>>_bits;
    s=(unsigned)(_this->val/_this->ext);
-   return (1<<_bits)-EC_MINI(s+1,1<<_bits);
+   return (1<<_bits)-EC_MINI(s+1,1u<<_bits);
 }
 
 void ec_dec_update(ec_dec *_this,unsigned _fl,unsigned _fh,unsigned _ft){
