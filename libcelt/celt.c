@@ -1951,7 +1951,7 @@ void celt_decoder_destroy(CELTDecoder *st)
 static void celt_decode_lost(CELTDecoder * restrict st, celt_word16 * restrict pcm, int N, int LM)
 {
    int c;
-   int pitch_index;
+   int pitch_index = 0;
    int overlap = st->mode->overlap;
    celt_word16 fade = Q15ONE;
    int i, len;
