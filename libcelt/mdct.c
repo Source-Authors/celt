@@ -57,6 +57,10 @@
 #define M_PI 3.141592653
 #endif
 
+#ifndef M_PI_F
+#define M_PI_F 3.141592653f
+#endif
+
 #ifdef CUSTOM_MODES
 
 void clt_mdct_init(mdct_lookup *l,int N, int maxshift)
@@ -118,7 +122,7 @@ void clt_mdct_forward(const mdct_lookup *l, kiss_fft_scalar *in, kiss_fft_scalar
 #ifdef FIXED_POINT
    sine = TRIG_UPSCALE*(QCONST16(0.7853981f, 15)+N2)/N;
 #else
-   sine = (kiss_twiddle_scalar)2*M_PI*(.125f)/N;
+   sine = (kiss_twiddle_scalar)2*M_PI_F*(.125f)/N;
 #endif
 
    /* Consider the input to be composed of four blocks: [a, b, c, d] */
@@ -224,7 +228,7 @@ void clt_mdct_backward(const mdct_lookup *l, kiss_fft_scalar *in, kiss_fft_scala
 #ifdef FIXED_POINT
    sine = TRIG_UPSCALE*(QCONST16(0.7853981f, 15)+N2)/N;
 #else
-   sine = (kiss_twiddle_scalar)2*M_PI*(.125f)/N;
+   sine = (kiss_twiddle_scalar)2*M_PI_F*(.125f)/N;
 #endif
    
    /* Pre-rotate */
